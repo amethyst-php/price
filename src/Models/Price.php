@@ -21,4 +21,20 @@ class Price extends Model implements EntityContract
         $this->ini('amethyst.price.data.price');
         parent::__construct($attributes);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function price_rule()
+    {
+        return $this->belongsTo(PriceRule::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function target()
+    {
+        return $this->belongsTo(Target::class);
+    }
 }

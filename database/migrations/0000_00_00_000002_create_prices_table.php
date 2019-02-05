@@ -14,8 +14,11 @@ class CreatePricesTable extends Migration
     {
         Schema::create(Config::get('amethyst.price.data.price.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->text('description')->nullable();
+            $table->integer('price_rule_id')->unsigned()->nullable();
+            $table->foreign('price_rule_id')->references('id')->on(Config::get('amethyst.price-rule.data.price-rule.table'));
+            $table->integer('target_id')->unsigned()->nullable();
+            $table->foreign('target_id')->references('id')->on(Config::get('amethyst.target.data.target.table'));
+            $table->float('price');
             $table->timestamps();
             $table->softDeletes();
         });
