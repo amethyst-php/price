@@ -11,4 +11,11 @@ return [
     'authorizer' => Railken\Amethyst\Authorizers\PriceAuthorizer::class,
     'faker'      => Railken\Amethyst\Fakers\PriceFaker::class,
     'manager'    => Railken\Amethyst\Managers\PriceManager::class,
+    'attributes' => [
+        'priceable' => [
+            'options' => [
+                Railken\Amethyst\Models\Foo::class => Railken\Amethyst\Managers\FooManager::class,
+            ],
+        ],
+    ],
 ];

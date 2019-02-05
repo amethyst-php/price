@@ -35,6 +35,6 @@ class Price extends Model implements EntityContract
      */
     public function target()
     {
-        return $this->belongsTo(Target::class);
+        return $this->belongsTo(PriceRule::class);
     }
 }
