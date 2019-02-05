@@ -35,6 +35,14 @@ class Price extends Model implements EntityContract
      */
     public function target()
     {
-        return $this->belongsTo(PriceRule::class);
+        return $this->belongsTo(Target::class);
+    }
+
+    /**
+     * Get all of the owning issuable models.
+     */
+    public function priceable()
+    {
+        return $this->morphTo();
     }
 }
