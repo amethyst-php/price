@@ -8,11 +8,7 @@ use Railken\Amethyst\Managers\PriceManager;
 
 class PricesController extends RestManagerController
 {
-    use RestTraits\RestIndexTrait;
-    use RestTraits\RestShowTrait;
-    use RestTraits\RestCreateTrait;
-    use RestTraits\RestUpdateTrait;
-    use RestTraits\RestRemoveTrait;
+    use RestTraits\RestCommonTrait;
 
     /**
      * The class of the manager.
