@@ -33,6 +33,14 @@ class Price extends Model implements EntityContract
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function consume_rule()
+    {
+        return $this->belongsTo(ConsumeRule::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function target()
     {
         return $this->belongsTo(Target::class);

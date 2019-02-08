@@ -3,6 +3,7 @@
 namespace Railken\Amethyst\Schemas;
 
 use Illuminate\Support\Facades\Config;
+use Railken\Amethyst\Managers\ConsumeRuleManager;
 use Railken\Amethyst\Managers\PriceRuleManager;
 use Railken\Amethyst\Managers\TargetManager;
 use Railken\Lem\Attributes;
@@ -24,6 +25,9 @@ class PriceSchema extends Schema
             Attributes\BelongsToAttribute::make('price_rule_id')
                 ->setRelationName('price_rule')
                 ->setRelationManager(PriceRuleManager::class),
+            Attributes\BelongsToAttribute::make('consume_rule_id')
+                ->setRelationName('consume_rule')
+                ->setRelationManager(ConsumeRuleManager::class),
             Attributes\BelongsToAttribute::make('target_id')
                 ->setRelationName('target')
                 ->setRelationManager(TargetManager::class)

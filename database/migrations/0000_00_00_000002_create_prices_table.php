@@ -16,6 +16,8 @@ class CreatePricesTable extends Migration
             $table->increments('id');
             $table->integer('price_rule_id')->unsigned()->nullable();
             $table->foreign('price_rule_id')->references('id')->on(Config::get('amethyst.price-rule.data.price-rule.table'));
+            $table->integer('consume_rule_id')->unsigned()->nullable();
+            $table->foreign('consume_rule_id')->references('id')->on(Config::get('amethyst.consume-rule.data.consume-rule.table'));
             $table->integer('target_id')->unsigned()->nullable();
             $table->foreign('target_id')->references('id')->on(Config::get('amethyst.target.data.target.table'));
             $table->float('price');

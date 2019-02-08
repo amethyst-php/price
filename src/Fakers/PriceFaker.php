@@ -17,6 +17,7 @@ class PriceFaker extends Faker
 
         $bag = new Bag();
         $bag->set('price_rule', PriceRuleFaker::make()->parameters()->toArray());
+        $bag->set('consume_rule', ConsumeRuleFaker::make()->parameters()->toArray());
         $bag->set('target', TargetFaker::make()->parameters()->toArray());
         $bag->set('price', 10.22);
         $bag->set('priceable_type', \Railken\Amethyst\Models\Foo::class);

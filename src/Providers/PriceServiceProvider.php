@@ -13,6 +13,7 @@ class PriceServiceProvider extends CommonServiceProvider
     {
         parent::register();
         $this->app->register(\Railken\Amethyst\Providers\PriceRuleServiceProvider::class);
+        $this->app->register(\Railken\Amethyst\Providers\ConsumeRuleServiceProvider::class);
         $this->app->register(\Railken\Amethyst\Providers\TargetServiceProvider::class);
     }
 }
