@@ -7,7 +7,7 @@ use Railken\Amethyst\Common\CommonServiceProvider;
 class PriceServiceProvider extends CommonServiceProvider
 {
     /**
-     * Register the service provider.
+     * @inherit
      */
     public function register()
     {
@@ -17,8 +17,13 @@ class PriceServiceProvider extends CommonServiceProvider
         $this->app->register(\Railken\Amethyst\Providers\TargetServiceProvider::class);
     }
 
+    /**
+     * @inherit
+     */
     public function boot()
     {
+        parent::boot();
+
         \Illuminate\Database\Eloquent\Builder::macro('price', function () {
             return $this->getModel()->morphOne(\Railken\Amethyst\Models\Price::class, 'priceable');
         });
