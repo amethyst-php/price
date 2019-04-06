@@ -21,4 +21,4 @@ return [
             'description' => 'Prezzo (e.g. 1000.30)'
         ]
     ]
-]
+];
