@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Railken\Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
+use Illuminate\Database\EloquentRelations\BelongsTo;
+use Illuminate\Database\EloquentRelations\MorphTo;
 
 class Price extends Model implements EntityContract
 {
@@ -25,7 +27,7 @@ class Price extends Model implements EntityContract
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function price_rule()
+    public function price_rule(): BelongsTo
     {
         return $this->belongsTo(PriceRule::class);
     }
@@ -33,7 +35,7 @@ class Price extends Model implements EntityContract
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function consume_rule()
+    public function consume_rule(): BelongsTo
     {
         return $this->belongsTo(ConsumeRule::class);
     }
@@ -41,7 +43,7 @@ class Price extends Model implements EntityContract
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function target()
+    public function target(): BelongsTo
     {
         return $this->belongsTo(Target::class);
     }
@@ -49,7 +51,7 @@ class Price extends Model implements EntityContract
     /**
      * Get all of the owning issuable models.
      */
-    public function priceable()
+    public function priceable(): MorphTo
     {
         return $this->morphTo();
     }
