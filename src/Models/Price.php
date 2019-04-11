@@ -4,10 +4,10 @@ namespace Railken\Amethyst\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Railken\Amethyst\Common\ConfigurableModel;
-use Railken\Lem\Contracts\EntityContract;
 use Illuminate\Database\EloquentRelations\BelongsTo;
 use Illuminate\Database\EloquentRelations\MorphTo;
+use Railken\Amethyst\Common\ConfigurableModel;
+use Railken\Lem\Contracts\EntityContract;
 
 class Price extends Model implements EntityContract
 {

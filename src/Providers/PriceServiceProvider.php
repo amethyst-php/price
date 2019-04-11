@@ -2,9 +2,9 @@
 
 namespace Railken\Amethyst\Providers;
 
-use Railken\Amethyst\Common\CommonServiceProvider;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Railken\Amethyst\Common\CommonServiceProvider;
 
 class PriceServiceProvider extends CommonServiceProvider
 {
