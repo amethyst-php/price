@@ -17,20 +17,12 @@ class PriceServiceProvider extends CommonServiceProvider
         $this->app->register(\Railken\Amethyst\Providers\PriceRuleServiceProvider::class);
         $this->app->register(\Railken\Amethyst\Providers\ConsumeRuleServiceProvider::class);
         $this->app->register(\Railken\Amethyst\Providers\TargetServiceProvider::class);
-    }
-
-    /**
-     * @inherit
-     */
-    public function boot()
-    {
-        parent::boot();
 
         \Illuminate\Database\Eloquent\Builder::macro('price', function (): MorphOne {
-            return $this->getModel()->morphOne(\Railken\Amethyst\Models\Price::class, 'priceable');
+            return app('amethyst')->createMacroMorphRelation($this, \Railken\Amethyst\Models\Price::class, 'price', 'priceable');
         });
         \Illuminate\Database\Eloquent\Builder::macro('prices', function (): MorphMany {
-            return $this->getModel()->morphMany(\Railken\Amethyst\Models\Price::class, 'priceable');
+            return app('amethyst')->createMacroMorphRelation($this, \Railken\Amethyst\Models\Price::class, 'prices', 'priceable');
         });
     }
 }

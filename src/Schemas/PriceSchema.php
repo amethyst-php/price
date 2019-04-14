@@ -2,7 +2,6 @@
 
 namespace Railken\Amethyst\Schemas;
 
-use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Managers\ConsumeRuleManager;
 use Railken\Amethyst\Managers\PriceRuleManager;
 use Railken\Amethyst\Managers\TargetManager;
@@ -18,8 +17,6 @@ class PriceSchema extends Schema
      */
     public function getAttributes()
     {
-        $priceableConfig = Config::get('amethyst.price.data.price.attributes.priceable.options');
-
         return [
             Attributes\IdAttribute::make(),
             Attributes\BelongsToAttribute::make('price_rule_id')
@@ -33,12 +30,12 @@ class PriceSchema extends Schema
                 ->setRelationManager(TargetManager::class)
                 ->setRequired(true),
             Attributes\NumberAttribute::make('price')->setRequired(true),
-            Attributes\EnumAttribute::make('priceable_type', array_keys($priceableConfig))
+            Attributes\EnumAttribute::make('priceable_type', app('amethyst')->getMorphListable('price', 'priceable'))
                 ->setRequired(true),
             Attributes\MorphToAttribute::make('priceable_id')
                 ->setRelationKey('priceable_type')
                 ->setRelationName('priceable')
-                ->setRelations($priceableConfig)
+                ->setRelations(app('amethyst')->getMorphRelationable('price', 'priceable'))
                 ->setRequired(true),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
