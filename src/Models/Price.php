@@ -29,7 +29,7 @@ class Price extends Model implements EntityContract
      */
     public function price_rule(): BelongsTo
     {
-        return $this->belongsTo(PriceRule::class);
+        return $this->belongsTo(config('amethyst.price-rule.data.price-rule.model'));
     }
 
     /**
@@ -37,7 +37,7 @@ class Price extends Model implements EntityContract
      */
     public function consume_rule(): BelongsTo
     {
-        return $this->belongsTo(ConsumeRule::class);
+        return $this->belongsTo(config('amethyst.consume-rule.data.consume-rule.model'));
     }
 
     /**
@@ -45,7 +45,7 @@ class Price extends Model implements EntityContract
      */
     public function target(): BelongsTo
     {
-        return $this->belongsTo(Target::class);
+        return $this->belongsTo(config('amethyst.target.data.target.model'));
     }
 
     /**
