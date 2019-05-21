@@ -56,4 +56,9 @@ class Price extends Model implements EntityContract
     {
         return $this->morphTo();
     }
+
+    public function calculate(array $vars = [])
+    {
+        return $this->price_rule ? $this->price_rule->calculate($this->price, $vars) : $this->price;
+    }
 }

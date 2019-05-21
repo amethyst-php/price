@@ -16,6 +16,7 @@ class PriceFaker extends Faker
         $faker = Factory::create();
 
         $bag = new Bag();
+        $bag->set('code', $faker->name);
         $bag->set('price_rule', PriceRuleFaker::make()->parameters()->toArray());
         $bag->set('consume_rule', ConsumeRuleFaker::make()->parameters()->toArray());
         $bag->set('target', TargetFaker::make()->parameters()->toArray());

@@ -19,6 +19,7 @@ class PriceSchema extends Schema
     {
         return [
             Attributes\IdAttribute::make(),
+            Attributes\TextAttribute::make('code'),
             Attributes\BelongsToAttribute::make('price_rule_id')
                 ->setRelationName('price_rule')
                 ->setRelationManager(PriceRuleManager::class),
