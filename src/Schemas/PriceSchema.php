@@ -28,8 +28,7 @@ class PriceSchema extends Schema
                 ->setRelationManager(ConsumeRuleManager::class),
             Attributes\BelongsToAttribute::make('target_id')
                 ->setRelationName('target')
-                ->setRelationManager(TargetManager::class)
-                ->setRequired(true),
+                ->setRelationManager(TargetManager::class),
             Attributes\NumberAttribute::make('price')->setRequired(true),
             Attributes\EnumAttribute::make('priceable_type', app('amethyst')->getMorphListable('price', 'priceable'))
                 ->setRequired(true),
