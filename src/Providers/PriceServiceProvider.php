@@ -24,9 +24,5 @@ class PriceServiceProvider extends CommonServiceProvider
     public function boot()
     {
         parent::boot();
-
-        \Illuminate\Database\Eloquent\Builder::macro('prices', function (): MorphMany {
-            return app('amethyst')->createMacroMorphRelation($this, \Railken\Amethyst\Models\Price::class, 'prices', 'priceable');
-        });
     }
 }
