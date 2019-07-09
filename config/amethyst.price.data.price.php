@@ -3,14 +3,14 @@
 return [
     'table'      => 'amethyst_prices',
     'comment'    => 'Price',
-    'model'      => Railken\Amethyst\Models\Price::class,
-    'schema'     => Railken\Amethyst\Schemas\PriceSchema::class,
-    'repository' => Railken\Amethyst\Repositories\PriceRepository::class,
-    'serializer' => Railken\Amethyst\Serializers\PriceSerializer::class,
-    'validator'  => Railken\Amethyst\Validators\PriceValidator::class,
-    'authorizer' => Railken\Amethyst\Authorizers\PriceAuthorizer::class,
-    'faker'      => Railken\Amethyst\Fakers\PriceFaker::class,
-    'manager'    => Railken\Amethyst\Managers\PriceManager::class,
+    'model'      => Amethyst\Models\Price::class,
+    'schema'     => Amethyst\Schemas\PriceSchema::class,
+    'repository' => Amethyst\Repositories\PriceRepository::class,
+    'serializer' => Amethyst\Serializers\PriceSerializer::class,
+    'validator'  => Amethyst\Validators\PriceValidator::class,
+    'authorizer' => Amethyst\Authorizers\PriceAuthorizer::class,
+    'faker'      => Amethyst\Fakers\PriceFaker::class,
+    'manager'    => Amethyst\Managers\PriceManager::class,
     'attributes' => [
         'priceable' => [
             'options' => [],

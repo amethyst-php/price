@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Schemas;
+namespace Amethyst\Schemas;
 
-use Railken\Amethyst\Managers\ConsumeRuleManager;
-use Railken\Amethyst\Managers\PriceRuleManager;
-use Railken\Amethyst\Managers\TargetManager;
+use Amethyst\Managers\ConsumeRuleManager;
+use Amethyst\Managers\PriceRuleManager;
+use Amethyst\Managers\TargetManager;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 

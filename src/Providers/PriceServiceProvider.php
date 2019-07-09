@@ -1,8 +1,8 @@
 <?php
 
-namespace Railken\Amethyst\Providers;
+namespace Amethyst\Providers;
 
-use Railken\Amethyst\Common\CommonServiceProvider;
+use Amethyst\Common\CommonServiceProvider;
 
 class PriceServiceProvider extends CommonServiceProvider
 {
@@ -12,9 +12,9 @@ class PriceServiceProvider extends CommonServiceProvider
     public function register()
     {
         parent::register();
-        $this->app->register(\Railken\Amethyst\Providers\PriceRuleServiceProvider::class);
-        $this->app->register(\Railken\Amethyst\Providers\ConsumeRuleServiceProvider::class);
-        $this->app->register(\Railken\Amethyst\Providers\TargetServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\PriceRuleServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\ConsumeRuleServiceProvider::class);
+        $this->app->register(\Amethyst\Providers\TargetServiceProvider::class);
     }
 
     /**
