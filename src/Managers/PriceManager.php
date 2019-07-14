@@ -5,6 +5,14 @@ namespace Amethyst\Managers;
 use Amethyst\Common\ConfigurableManager;
 use Railken\Lem\Manager;
 
+/**
+ * @method \Amethyst\Models\Price newEntity()
+ * @method \Amethyst\Schemas\PriceSchema getSchema()
+ * @method \Amethyst\Repositories\PriceRepository getRepository()
+ * @method \Amethyst\Serializers\PriceSerializer getSerializer()
+ * @method \Amethyst\Validators\PriceValidator getValidator()
+ * @method \Amethyst\Authorizers\PriceAuthorizer getAuthorizer()
+ */
 class PriceManager extends Manager
 {
     use ConfigurableManager;
