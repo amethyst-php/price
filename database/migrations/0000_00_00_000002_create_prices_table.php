@@ -22,8 +22,8 @@ class CreatePricesTable extends Migration
             $table->integer('target_id')->unsigned()->nullable();
             $table->foreign('target_id')->references('id')->on(Config::get('amethyst.target.data.target.table'));
             $table->float('price');
-            $table->string('priceable_type');
-            $table->integer('priceable_id');
+            $table->string('priceable_type')->nullable();
+            $table->integer('priceable_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

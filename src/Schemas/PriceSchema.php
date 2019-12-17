@@ -30,13 +30,11 @@ class PriceSchema extends Schema
                 ->setRelationName('target')
                 ->setRelationManager(TargetManager::class),
             Attributes\NumberAttribute::make('price')->setRequired(true),
-            Attributes\EnumAttribute::make('priceable_type', app('amethyst')->getMorphListable('price', 'priceable'))
-                ->setRequired(true),
+            Attributes\EnumAttribute::make('priceable_type', app('amethyst')->getMorphListable('price', 'priceable')),
             Attributes\MorphToAttribute::make('priceable_id')
                 ->setRelationKey('priceable_type')
                 ->setRelationName('priceable')
-                ->setRelations(app('amethyst')->getMorphRelationable('price', 'priceable'))
-                ->setRequired(true),
+                ->setRelations(app('amethyst')->getMorphRelationable('price', 'priceable')),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),
