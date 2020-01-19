@@ -1,6 +1,6 @@
 # amethyst-price
 
-[![Build Status](https://travis-ci.org/amethyst-php/price.svg?branch=master)](https://travis-ci.org/amethyst-php/price)
+[![Action Status](https://github.com/amethyst-php/price/workflows/test/badge.svg)](https://github.com/amethyst-php/price/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package.
 
