@@ -30,7 +30,7 @@ class PriceSchema extends Schema
                 ->setRelationName('target')
                 ->setRelationManager(TargetManager::class),
             Attributes\NumberAttribute::make('price')->setRequired(true),
-            Attributes\EnumAttribute::make('priceable_type', app('amethyst')->getDataNames()),
+            \Amethyst\Core\Attributes\DataNameAttribute::make('priceable_type'),
             Attributes\MorphToAttribute::make('priceable_id')
                 ->setRelationKey('priceable_type')
                 ->setRelationName('priceable')
